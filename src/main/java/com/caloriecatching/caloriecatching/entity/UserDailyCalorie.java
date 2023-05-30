@@ -10,7 +10,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-public class UserDailyCalorieTable {
+@Table(name = "user_daily_calorie")
+public class UserDailyCalorie {
 
     @EmbeddedId
     private UserDailyCalorieId id;
@@ -23,7 +24,7 @@ public class UserDailyCalorieTable {
         private LocalDate date;
 
         @ManyToOne(fetch = FetchType.LAZY)
-        @MapsId("userID")
-        private UserTable userID;
+        @MapsId("loginId")
+        private User loginId;
     }
 }

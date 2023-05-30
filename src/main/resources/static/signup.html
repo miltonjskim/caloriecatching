@@ -80,9 +80,9 @@
                      <h2>회원가입</h2>
                      <form method="post" action="/user/signup" id="login-form">
                          <input type="text" name="userName" placeholder="이름">
-                         <input type="text" name="loginID" placeholder="ID">
-                         <input type="password" name="Password" id="password" placeholder="비밀번호">
-                         <input type="password" name="confirmPassword" id="confirmPassword" placeholder="비밀번호 확인">
+                         <input type="text" name="loginId" placeholder="ID">
+                         <input type="password" name="password1" id="password" placeholder="비밀번호">
+                         <input type="password" name="password2" id="confirmPassword" placeholder="비밀번호 확인">
                          <input type="submit" value="회원가입" id="signup-button">
                          <div class="wrap" style="text-align: center;">
                        </div>
@@ -187,7 +187,7 @@
    const confirmPasswordInput = document.getElementById('confirmPassword');
    const signupButton = document.getElementById('signup-button');
  
-   signupButton.addEventListener('click', function(event) {
+   signupButton.addEventListener('submit', function(event) {
      const password = passwordInput.value;
      const confirmPassword = confirmPasswordInput.value;
  

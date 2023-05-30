@@ -1,12 +1,12 @@
 package com.caloriecatching.caloriecatching.service;
 
 import com.caloriecatching.caloriecatching.entity.UserRole;
-import com.caloriecatching.caloriecatching.entity.UserTable;
+import com.caloriecatching.caloriecatching.entity.User;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,11 +27,11 @@ public class UserSecurityService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String loginID) throws UsernameNotFoundException {
 
-        Optional<UserTable> _userTable = this.userRepository.findByLoginID(loginID);
+        Optional<User> _userTable = this.userRepository.findByLoginId(loginID);
         if(_userTable.isEmpty()) {
             throw new UsernameNotFoundException("사용자를 찾을 수 없습니다.");
         }
-        UserTable userTable = _userTable.get();
+        User user = _userTable.get();
         List<GrantedAuthority> authorities = new ArrayList<>();
         if("admin".equals(loginID)) {
             authorities.add(new SimpleGrantedAuthority(UserRole.ADMIN.getValue()));
@@ -39,6 +39,6 @@ public class UserSecurityService implements UserDetailsService {
             authorities.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
         }
 
-        return new User(userTable.getLoginID(), userTable.getPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(user.getLoginId(), user.getPassword(), authorities);
     }
 }

@@ -1,11 +1,11 @@
 package com.caloriecatching.caloriecatching.repository;
 
-import com.caloriecatching.caloriecatching.entity.FoodTable;
+import com.caloriecatching.caloriecatching.entity.Food;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FoodRepository extends JpaRepository<FoodTable, Integer> {
+public interface FoodRepository extends JpaRepository<Food, Integer> {
 
-    FoodTable findByFoodId(Integer foodId);
+    Food findByFoodId(Integer foodId);
 }

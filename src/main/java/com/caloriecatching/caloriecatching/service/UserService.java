@@ -1,6 +1,6 @@
 package com.caloriecatching.caloriecatching.service;
 
-import com.caloriecatching.caloriecatching.entity.UserTable;
+import com.caloriecatching.caloriecatching.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,11 +14,11 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserTable create(String userName, String loginID, String password) {
+    public User create(String userName, String loginId, String password) {
 
-        UserTable user = new UserTable();
+        User user = new User();
         user.setUserName(userName);
-        user.setLoginID(loginID);
+        user.setLoginId(loginId);
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(password));
 

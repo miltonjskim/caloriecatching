@@ -2,7 +2,7 @@ package com.caloriecatching.caloriecatching.controller;
 
 import com.caloriecatching.caloriecatching.config.FileUtils;
 import com.caloriecatching.caloriecatching.service.FoodPredictionService;
-import com.caloriecatching.caloriecatching.entity.FoodTable;
+import com.caloriecatching.caloriecatching.entity.Food;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,10 +43,10 @@ public class FoodCalorieController {
             int calorie = 0;
 
             // predictedValue 값을 DB에 쿼리해 한글 음식명, 칼로리를 반환하는 메소드 호출
-            FoodTable foodTable = foodRepository.findByFoodId(predictedValue);
-            if(foodTable != null) {
-                korname = foodTable.getKorName();
-                calorie = foodTable.getFoodCalorie();
+            Food food = foodRepository.findByFoodId(predictedValue);
+            if(food != null) {
+                korname = food.getKorName();
+                calorie = food.getFoodCalorie();
             } else {
                 // 음식 정보가 없는 경우 예외 처리
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);

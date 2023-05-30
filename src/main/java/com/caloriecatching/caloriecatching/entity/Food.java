@@ -3,13 +3,15 @@ package com.caloriecatching.caloriecatching.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-public class FoodTable {
+@Table(name = "food")
+public class Food {
     @Id
     private Integer foodId;
 
