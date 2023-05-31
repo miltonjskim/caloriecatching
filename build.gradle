@@ -19,8 +19,10 @@ repositories {
 }
 
 dependencies {
+	implementation 'junit:junit:4.13.2'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+	compileOnly 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
 	implementation 'org.tensorflow:tensorflow:1.15.0'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -31,6 +33,18 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'com.fasterxml.jackson.core:jackson-core:2.14.2'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
+	// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core
+	implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
+
+	// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl
+	implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.1'
 }
 
 tasks.named('test') {

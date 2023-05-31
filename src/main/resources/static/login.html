@@ -78,15 +78,15 @@
                <div class="col-md-6">
                   <div class="login-wrapper">
                      <h2>LOGIN</h2>
-                     <form method="post" action="/user/login" id="login-form">
-                         <input type="text" name="loginId" placeholder="ID">
-                         <input type="password" name="password" placeholder="Password">
-                         <input type="submit" value="Login" >
-                         <div class="wrap" style="text-align: center;">
+                     <form onsubmit="sendLoginData()" id="login-form">
+                        <input type="text" name="loginId" placeholder="ID">
+                        <input type="password" name="password" placeholder="Password">
+                        <input type="submit" value="Login"></input>
+                        <div class="wrap" style="text-align: center;">
                            <a href="signup.html">회원가입 &nbsp;</a>
-                         </div>
+                        </div>
                      </form>
-                 </div>
+                  </div>
                </div>
             </div>
          </div>
@@ -177,6 +177,38 @@
          function closeNav() {
          document.getElementById("myNav").style.width = "0%";
          }
-      </script>  
+      </script>
+      <script>
+         function sendLoginData() {
+            Event.preventDefault(); // Prevent the default form submission
+
+            // Convert form data to JSON
+            var formData = {
+               loginId: document.getElementsByName("loginId")[0].value,
+               password: document.getElementsByName("password")[0].value
+            };
+            var jsonData = JSON.stringify(formData);
+
+            // Send POST request with JSON data
+            fetch('/user/login', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: jsonData
+            })
+                    .then(function(response) {
+                       // Handle response here
+                       if (response.ok) {
+                          window.location.href = "index.html"; // Redirect to index.html
+                       } else {
+                          console.log('Login failed');
+                       }
+                    })
+                    .catch(function(error) {
+                       console.log('Error:', error);
+                    });
+         }
+      </script>
    </body>
 </html>

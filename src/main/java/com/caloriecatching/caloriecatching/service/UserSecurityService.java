@@ -10,6 +10,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.caloriecatching.caloriecatching.repository.UserRepository;
 
@@ -22,23 +24,22 @@ import java.util.Optional;
 public class UserSecurityService implements UserDetailsService {
 
     private final UserRepository userRepository;
+    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
 
     @Override
     public UserDetails loadUserByUsername(String loginID) throws UsernameNotFoundException {
 
-        Optional<User> _userTable = this.userRepository.findByLoginId(loginID);
-        if(_userTable.isEmpty()) {
-            throw new UsernameNotFoundException("사용자를 찾을 수 없습니다.");
-        }
-        User user = _userTable.get();
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        if("admin".equals(loginID)) {
-            authorities.add(new SimpleGrantedAuthority(UserRole.ADMIN.getValue()));
-        } else {
-            authorities.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
-        }
+        return userRepository.findByLoginId(loginID)
+                .map(this::createUserDetails)
+                .orElseThrow(() -> new UsernameNotFoundException("해당하는 유저를 찾을 수 없습니다."));
+    }
 
-        return new org.springframework.security.core.userdetails.User(user.getLoginId(), user.getPassword(), authorities);
+    private UserDetails createUserDetails(User user) {
+        return org.springframework.security.core.userdetails.User.builder()
+                .username(user.getUserName())
+                .password(user.getPassword())
+                .roles("USER")
+                .build();
     }
 }
