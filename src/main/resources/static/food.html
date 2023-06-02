@@ -176,97 +176,96 @@
 
 
       <script>
-const dropArea = document.querySelector('.drop-area');
-const fileInput = document.getElementById('fileInput');
-const previewImage = document.getElementById('previewImage');
-const centerContent = document.querySelector('.center-content');
+         const dropArea = document.querySelector('.drop-area');
+         const fileInput = document.getElementById('fileInput');
+         const previewImage = document.getElementById('previewImage');
+         const centerContent = document.querySelector('.center-content');
 
-// 파일 선택 시 미리보기
-fileInput.addEventListener('change', () => {
-  const file = fileInput.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      previewImage.src = e.target.result;
-      dropArea.classList.add('has-preview');
-      centerContent.style.display = 'none'; // 내용 숨기기
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-
-// 드래그 앤 드롭 이벤트 처리
-dropArea.addEventListener('dragenter', (e) => {
-  e.preventDefault();
-  dropArea.classList.add('drag-over');
-});
-
-dropArea.addEventListener('dragleave', () => {
-  dropArea.classList.remove('drag-over');
-});
-
-dropArea.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
-
-dropArea.addEventListener('drop', (e) => {
-  e.preventDefault();
-  dropArea.classList.remove('drag-over');
-
-  const file = e.dataTransfer.files[0];
-  if (file) {
-    fileInput.files = e.dataTransfer.files;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      previewImage.src = event.target.result;
-      dropArea.classList.add('has-preview');
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-// 클릭 시 파일 선택
-dropArea.addEventListener('click', () => {
-  fileInput.click();
-});
-
-// 초기화
-dropArea.addEventListener('dblclick', () => {
-  fileInput.value = '';
-  previewImage.src = '';
-  dropArea.classList.remove('has-preview');
-  centerContent.style.display = 'flex'; // 내용 표시
-});
-
-const submitBtn = document.getElementById('submitBtn');
+         // 파일 선택 시 미리보기
+         fileInput.addEventListener('change', () => {
+           const file = fileInput.files[0];
+           if (file) {
+             const reader = new FileReader();
+             reader.onload = (e) => {
+               previewImage.src = e.target.result;
+               dropArea.classList.add('has-preview');
+               centerContent.style.display = 'none'; // 내용 숨기기
+             };
+             reader.readAsDataURL(file);
+           }
+         });
 
 
-// 버튼을 누르면 사진 서버로 보내기 
-const uploadButton = document.getElementById('uploadButton');
-    uploadButton.addEventListener('click', () => {
-      const fileInput = document.getElementById('fileInput');
-      const file = fileInput.files[0]; // 선택된 파일 가져오기
+         // 드래그 앤 드롭 이벤트 처리
+         dropArea.addEventListener('dragenter', (e) => {
+           e.preventDefault();
+           dropArea.classList.add('drag-over');
+         });
 
-      const formData = new FormData();
-      formData.append('file', file); // 폼 데이터에 파일 추가
-      
-      fetch('/food/calorie', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (response.ok) {
-      window.location.replace = 'calorie.html'; // 페이지 이동
-    } else {
-      throw new Error('사진 업로드에 실패했습니다.');
-    }
-  })
-  .catch(error => {
-    console.error('에러 발생:', error);
-  });
-});
+         dropArea.addEventListener('dragleave', () => {
+           dropArea.classList.remove('drag-over');
+         });
 
-         </script>
+         dropArea.addEventListener('dragover', (e) => {
+           e.preventDefault();
+         });
+
+         dropArea.addEventListener('drop', (e) => {
+           e.preventDefault();
+           dropArea.classList.remove('drag-over');
+
+           const file = e.dataTransfer.files[0];
+           if (file) {
+             fileInput.files = e.dataTransfer.files;
+             const reader = new FileReader();
+             reader.onload = (event) => {
+               previewImage.src = event.target.result;
+               dropArea.classList.add('has-preview');
+             };
+             reader.readAsDataURL(file);
+           }
+         });
+
+         // 클릭 시 파일 선택
+         dropArea.addEventListener('click', () => {
+           fileInput.click();
+         });
+
+         // 초기화
+         dropArea.addEventListener('dblclick', () => {
+           fileInput.value = '';
+           previewImage.src = '';
+           dropArea.classList.remove('has-preview');
+           centerContent.style.display = 'flex'; // 내용 표시
+         });
+
+         const submitBtn = document.getElementById('submitBtn');
+
+
+         // 버튼을 누르면 사진 서버로 보내기
+         const uploadButton = document.getElementById('uploadButton');
+             uploadButton.addEventListener('click', () => {
+               const file = fileInput.files[0]; // 선택된 파일 가져오기
+
+               const formData = new FormData();
+               formData.append('file', file); // 폼 데이터에 파일 추가
+
+               fetch('/food/calorie', {
+             method: 'POST',
+             body: formData
+           })
+           .then(response => {
+             if (response.ok) {
+               window.location.replace('calorie.html'); // 페이지 이동
+             } else {
+               throw new Error('사진 업로드에 실패했습니다.');
+             }
+           })
+           .catch(error => {
+             console.error('에러 발생:', error);
+           });
+         });
+
+      </script>
    </body>
 </html>

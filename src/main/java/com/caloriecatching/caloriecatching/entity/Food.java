@@ -12,14 +12,17 @@ import lombok.Setter;
 @Entity
 @Table(name = "food")
 public class Food {
+
     @Id
+    @Column(name = "food_id")
     private Integer foodId;
 
-    @Column(length = 100)
+    @Column(name = "food_name", length = 100)
     private String foodName;
 
-    @Column(length = 50)
+    @Column(name = "kor_name", length = 50)
     private String korName;
 
+    @Column(name = "food_calorie")
     private Integer foodCalorie;
 }

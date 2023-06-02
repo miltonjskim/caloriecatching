@@ -38,6 +38,7 @@ public class UserController {
 
         JwtToken token = userService.login(loginForm.get("loginId"), loginForm.get("password"));
 
+        // TODO : 유저의 이름을 리턴
         return ResponseEntity.ok(token);
     }
 

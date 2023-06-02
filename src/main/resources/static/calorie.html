@@ -187,7 +187,7 @@ window.addEventListener('load', function() {
 
 // 서버에서 데이터 가져오기
 function fetchDataFromServer() {
-  fetch('서버의url')
+  fetch('/food/calorie')
     .then(response => response.json())
     .then(data => {
       // 테이블 업데이트

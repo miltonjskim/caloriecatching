@@ -10,6 +10,7 @@ import java.nio.file.Files;
 public class FileUtils {
 
     public byte[] convertMultipartFileToBytes(MultipartFile file) throws IOException {
+
         return file.getBytes();
     }
 }
