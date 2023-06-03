@@ -15,6 +15,10 @@ public class UserDailyCalorie {
     @EmbeddedId
     private UserDailyCalorieId userDailyCalorieId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "login_id", insertable = false, updatable = false)
+    private User user;
+
     @Column(name = "daily_calorie")
     private Integer dailyCalorie;
 
@@ -27,8 +31,7 @@ public class UserDailyCalorie {
         @Column(name = "date")
         private LocalDate date;
 
-        @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn(name = "login_id")
-        private User loginId;
+        @Column(name = "login_id")
+        private String loginId;
     }
 }
