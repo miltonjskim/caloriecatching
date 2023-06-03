@@ -1,8 +1,7 @@
 package com.caloriecatching.caloriecatching.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -14,17 +13,22 @@ import java.time.LocalDate;
 public class UserDailyCalorie {
 
     @EmbeddedId
-    private UserDailyCalorieId id;
+    private UserDailyCalorieId userDailyCalorieId;
 
+    @Column(name = "daily_calorie")
     private Integer dailyCalorie;
 
     @Embeddable
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Data
     public static class UserDailyCalorieId implements Serializable {
 
+        @Column(name = "date")
         private LocalDate date;
 
         @ManyToOne(fetch = FetchType.LAZY)
-        @MapsId("loginId")
+        @JoinColumn(name = "login_id")
         private User loginId;
     }
 }
