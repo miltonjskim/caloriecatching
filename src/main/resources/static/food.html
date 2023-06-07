@@ -1,271 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>food</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" type="image/png" href="images/favicon2.png">
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- owl stylesheets --> 
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   </head>
-   <body>
-      <!--header section start -->
-      <div class="header_section header_bg">
-         <div class="container-fluid">
-               <div class="main">
-                  <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-                  <div class="menu_text">
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>food</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" type="image/png" href="images/favicon2.png">
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <!-- owl stylesheets -->
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<body>
+<!--header section start -->
+<div class="header_section header_bg">
+   <div class="container-fluid">
+      <div class="main">
+         <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         <div class="menu_text">
+            <ul>
+               <div class="togle_">
+                  <div class="menu_main">
                      <ul>
-                        <div class="togle_">
-                           <div class="menu_main">
-                              <ul>
-                                 <li><a href="login.html" style="color: white;">Login</a></li>
-                                 <li><a href="#"><i class="fa fa-search" aria-hidden="true" style="color: white;"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div id="myNav" class="overlay">
-                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                           <div class="overlay-content">
-                              <a href="index.html">Home</a>
-                              <a href="food.html">Calorie check</a>
-                              <a href="graph.html">Daily calorie</a>
-                              <a href="recommendation.html">Recommendation menu</a>
-                           </div>
-                        </div>
-                        <span class="navbar-toggler-icon"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu"></span>
-                        <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu_1"></span>
+                        <li><a style="opacity: 0" >Login</a></li>
+                        <li><a><i class="fa fa-search" aria-hidden="true" style="opacity: 0" ></i></a></li>
                      </ul>
                   </div>
                </div>
-            </div>
-            <!-- banner section start -->
-            <div class="container">
-               <div class="about_taital_main">
-                  <h2 class="about_tag">CATCH!</br> check calorie by photo</h2>
-                  <div class="about_menu">
+               <div id="myNav" class="overlay">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <div class="overlay-content">
+                     <a href="index.html">Home</a>
+                     <a href="food.html">Calorie check</a>
+                     <a href="graph.html">Daily calorie</a>
+                     <a href="recommendation.html">Recommendation menu</a>
                   </div>
                </div>
-            </div>
-         <!-- banner section end -->
-      </div>
-      <!-- header section end -->
-      <!-- protect section start -->
-      <div class="protect_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                  <h1 class="protect_taital">간단하게 칼로리를 확인하세요</h1>
-                  <p class="protect_text">음식이 가려지지 않고, 밝은 곳에서 촬영한 사진일수록 더욱 인식률이 좋습니다.</br> 식단 사진을 업로드 해주세요</p>
-               </div>
-            </div>
-            <div class="drop-area">
-               <div class="center-content">
-                  <img src="images/photo.png" alt="파일 아이콘" class="image">
-                 <span class="drop-text">Click or Drag files to upload</span>
-               </div>
-               <input type="file" id="fileInput" accept="image/*" />
-               <div id="previewWrapper">
-                 <img id="previewImage" alt="" />
-               </div>
-             </div>
-             <button id="uploadButton" class="rounded-button"><a href="calorie.html">칼로리 확인하기</a></button>
+               <span class="navbar-toggler-icon"></span>
+               <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu"></span>
+               <span onclick="openNav()"><img src="images/toogle-icon1.png" class="toggle_menu_1"></span>
+            </ul>
          </div>
       </div>
-      <!-- protect section end -->
-      <!-- footer section start -->
-      <div class="footer_section layout_padding margin_top90">
-         <div class="container">
-            <div class="footer_section_2">
-               <div class="row">
-                  <div class="col-lg-3 col-sm-6">
-                     <h2 class="useful_text">Resources</h2>
-                     <div class="footer_menu">
-                        <ul>
-                           <li><a href="index.html">Home</a></li>
-                           <li><a href="food.html">Calorie check</a></li>
-                           <li><a href="graph.html">Daily calorie</a></li>
-                           <li><a href="recommendation.html">Recommendation menu</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <h2 class="useful_text">About</h2>
-                     <p class="footer_text">Calorie catching은 사진 기반 칼로리 추적, 개인형 맞춤 식단 추천, 그래프를 통한 칼로리 확인 등 여러 기능을 통해 건강한 식습관을 디자인할 수 있게 도와주는 서비스입니다.</p>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <h2 class="useful_text">Contact Us</h2>
-                     <div class="location_text">
-                        <ul>
-                           <li>
-                              <a><i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span class="padding_15">rkdrjs544@gmail.com</span></a>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <h2 class="useful_text">countrys</h2>
-                     <div class="map_image"><img src="images/map-bg.png"></div>
-                  </div>
+   </div>
+   <!-- banner section start -->
+   <div class="container">
+      <div class="about_taital_main">
+         <h2 class="about_tag">CATCH!</br> check calorie by photo</h2>
+         <div class="about_menu">
+         </div>
+      </div>
+   </div>
+   <!-- banner section end -->
+</div>
+<!-- header section end -->
+<!-- protect section start -->
+<div class="protect_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12">
+            <h1 class="protect_taital">간단하게 칼로리를 확인하세요</h1>
+            <p class="protect_text">음식이 가려지지 않고, 밝은 곳에서 촬영한 사진일수록 더욱 인식률이 좋습니다.</br> 식단 사진을 업로드 해주세요</p>
+         </div>
+      </div>
+      <div class="drop-area">
+         <div class="center-content">
+            <img src="images/photo.png" alt="파일 아이콘" class="image">
+            <span class="drop-text">Click or Drag files to upload</span>
+         </div>
+         <input type="file" id="fileInput" accept="image/*" />
+         <div id="previewWrapper">
+            <img id="previewImage" alt="" />
+         </div>
+      </div>
+      <button id="uploadButton" class="rounded-button">칼로리 확인하기</a></button>
+   </div>
+</div>
+<!-- protect section end -->
+<!-- footer section start -->
+<div class="footer_section layout_padding margin_top90">
+   <div class="container">
+      <div class="footer_section_2">
+         <div class="row">
+            <div class="col-lg-3 col-sm-6">
+               <h2 class="useful_text">Resources</h2>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="food.html">Calorie check</a></li>
+                     <li><a href="graph.html">Daily calorie</a></li>
+                     <li><a href="recommendation.html">Recommendation menu</a></li>
+                  </ul>
                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h2 class="useful_text">About</h2>
+               <p class="footer_text">Calorie catching은 사진 기반 칼로리 추적, 개인형 맞춤 식단 추천, 그래프를 통한 칼로리 확인 등 여러 기능을 통해 건강한 식습관을 디자인할 수 있게 도와주는 서비스입니다.</p>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h2 class="useful_text">Contact Us</h2>
+               <div class="location_text">
+                  <ul>
+                     <li>
+                        <a><i class="fa fa-envelope" aria-hidden="true"></i>
+                           <span class="padding_15">rkdrjs544@gmail.com</span></a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h2 class="useful_text">countrys</h2>
+               <div class="map_image"><img src="images/map-bg.png"></div>
             </div>
          </div>
       </div>
-      <!-- footer section end -->
-   
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <!-- javascript --> 
-      <script src="js/owl.carousel.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-      <script>
-         $(document).ready(function(){
-         $(".fancybox").fancybox({
+   </div>
+</div>
+<!-- footer section end -->
+
+<!-- Javascript files-->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/plugin.js"></script>
+<!-- sidebar -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+<!-- javascript -->
+<script src="js/owl.carousel.js"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script>
+   $(document).ready(function(){
+      $(".fancybox").fancybox({
          openEffect: "none",
          closeEffect: "none"
-         });
-              
-         $(".zoom").hover(function(){
-              
+      });
+
+      $(".zoom").hover(function(){
+
          $(this).addClass('transition');
-         }, function(){
-              
+      }, function(){
+
          $(this).removeClass('transition');
-         });
-         });
-      </script> 
-      <script>
-         function openNav() {
-         document.getElementById("myNav").style.width = "100%";
+      });
+   });
+</script>
+<script>
+   function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+   }
+   function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+   }
+</script>
+
+
+<script>
+   const dropArea = document.querySelector('.drop-area');
+   const fileInput = document.getElementById('fileInput');
+   const previewImage = document.getElementById('previewImage');
+   const centerContent = document.querySelector('.center-content');
+
+   // 파일 선택 시 미리보기
+   fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (file) {
+         const reader = new FileReader();
+         reader.onload = (e) => {
+            previewImage.src = e.target.result;
+            dropArea.classList.add('has-preview');
+            centerContent.style.display = 'none'; // 내용 숨기기
+         };
+         reader.readAsDataURL(file);
+      }
+   });
+
+
+   // 드래그 앤 드롭 이벤트 처리
+   dropArea.addEventListener('dragenter', (e) => {
+      e.preventDefault();
+      dropArea.classList.add('drag-over');
+   });
+
+   dropArea.addEventListener('dragleave', () => {
+      dropArea.classList.remove('drag-over');
+   });
+
+   dropArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+   });
+
+   dropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropArea.classList.remove('drag-over');
+
+      const file = e.dataTransfer.files[0];
+      if (file) {
+         fileInput.files = e.dataTransfer.files;
+         const reader = new FileReader();
+         reader.onload = (event) => {
+            previewImage.src = event.target.result;
+            dropArea.classList.add('has-preview');
+         };
+         reader.readAsDataURL(file);
+      }
+   });
+
+   // 클릭 시 파일 선택
+   dropArea.addEventListener('click', () => {
+      fileInput.click();
+   });
+
+   // 초기화
+   dropArea.addEventListener('dblclick', () => {
+      fileInput.value = '';
+      previewImage.src = '';
+      dropArea.classList.remove('has-preview');
+      centerContent.style.display = 'flex'; // 내용 표시
+   });
+
+   document.addEventListener('DOMContentLoaded', function() {
+      const uploadButton = document.getElementById('uploadButton');
+      const fileInput = document.getElementById('fileInput');
+      const previewImage = document.getElementById('previewImage');
+
+      uploadButton.addEventListener('click', function() {
+         const file = fileInput.files[0];
+         if (!file) {
+            alert('사진을 입력하세요.');
+            return;
          }
-         function closeNav() {
-         document.getElementById("myNav").style.width = "0%";
-         }
-      </script>  
 
+         const formData = new FormData();
+         formData.append('image', file);
 
-      <script>
-         const dropArea = document.querySelector('.drop-area');
-         const fileInput = document.getElementById('fileInput');
-         const previewImage = document.getElementById('previewImage');
-         const centerContent = document.querySelector('.center-content');
+         fetch('/food/calorie', {
+            method: 'POST',
+            body: formData
+         })
+                 .then(response => {
+                    if (response.ok) {
+                       return response.json();
+                    } else {
+                       throw new Error('Request failed');
+                    }
+                 })
+                 .then(data => {
+                    const kornameArray = data.map(item => item.korname);
+                    const calorieArray = data.map(item => item.calorie);
 
-         // 파일 선택 시 미리보기
-         fileInput.addEventListener('change', () => {
-           const file = fileInput.files[0];
-           if (file) {
-             const reader = new FileReader();
-             reader.onload = (e) => {
-               previewImage.src = e.target.result;
-               dropArea.classList.add('has-preview');
-               centerContent.style.display = 'none'; // 내용 숨기기
-             };
-             reader.readAsDataURL(file);
-           }
-         });
+                    // Save the kornameArray and calorieArray to local variables
+                    // You can use them in the calorie.html page
+                    localStorage.setItem('kornameArray', JSON.stringify(kornameArray));
+                    localStorage.setItem('calorieArray', JSON.stringify(calorieArray));
 
+                    // Redirect to calorie.html
+                    window.location.href = 'calorie.html';
+                 })
+                 .catch(error => {
+                    console.error(error);
+                    alert('서버로의 업로드에 실패했습니다.');
+                 });
+      });
+   });
 
-         // 드래그 앤 드롭 이벤트 처리
-         dropArea.addEventListener('dragenter', (e) => {
-           e.preventDefault();
-           dropArea.classList.add('drag-over');
-         });
-
-         dropArea.addEventListener('dragleave', () => {
-           dropArea.classList.remove('drag-over');
-         });
-
-         dropArea.addEventListener('dragover', (e) => {
-           e.preventDefault();
-         });
-
-         dropArea.addEventListener('drop', (e) => {
-           e.preventDefault();
-           dropArea.classList.remove('drag-over');
-
-           const file = e.dataTransfer.files[0];
-           if (file) {
-             fileInput.files = e.dataTransfer.files;
-             const reader = new FileReader();
-             reader.onload = (event) => {
-               previewImage.src = event.target.result;
-               dropArea.classList.add('has-preview');
-             };
-             reader.readAsDataURL(file);
-           }
-         });
-
-         // 클릭 시 파일 선택
-         dropArea.addEventListener('click', () => {
-           fileInput.click();
-         });
-
-         // 초기화
-         dropArea.addEventListener('dblclick', () => {
-           fileInput.value = '';
-           previewImage.src = '';
-           dropArea.classList.remove('has-preview');
-           centerContent.style.display = 'flex'; // 내용 표시
-         });
-
-         const submitBtn = document.getElementById('submitBtn');
-
-
-         // 버튼을 누르면 사진 서버로 보내기
-         const uploadButton = document.getElementById('uploadButton');
-             uploadButton.addEventListener('click', () => {
-               const file = fileInput.files[0]; // 선택된 파일 가져오기
-
-               const formData = new FormData();
-               formData.append('file', file); // 폼 데이터에 파일 추가
-
-               fetch('/food/calorie', {
-             method: 'POST',
-             body: formData
-           })
-           .then(response => {
-             if (response.ok) {
-               window.location.replace('calorie.html'); // 페이지 이동
-             } else {
-               throw new Error('사진 업로드에 실패했습니다.');
-             }
-           })
-           .catch(error => {
-             console.error('에러 발생:', error);
-           });
-         });
-
-      </script>
-   </body>
+</script>
+</body>
 </html>

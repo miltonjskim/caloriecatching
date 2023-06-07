@@ -29,7 +29,6 @@ public class UserController {
 
         userService.create(userName, loginId, password1);
 
-        // TODO : 회원 가입 완료 페이지
         return ResponseEntity.ok("User created successfully.");
     }
 
@@ -38,9 +37,6 @@ public class UserController {
 
         JwtToken token = userService.login(loginForm.get("loginId"), loginForm.get("password"));
 
-        // TODO : 유저의 이름을 리턴
         return ResponseEntity.ok(token);
     }
-
-    // TODO : calorie 요청
 }
