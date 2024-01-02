@@ -41,7 +41,7 @@
                <div class="togle_">
                   <div class="menu_main">
                      <ul>
-                        <li><a style="opacity: 0" >Login</a></li>
+                        <li><a style="opacity: 0">Login</a></li>
                         <li><a><i class="fa fa-search" aria-hidden="true" style="opacity: 0" ></i></a></li>
                      </ul>
                   </div>
@@ -243,45 +243,32 @@
       const uploadButton = document.getElementById('uploadButton');
       const fileInput = document.getElementById('fileInput');
       const previewImage = document.getElementById('previewImage');
+   });
+   uploadButton.addEventListener('click', function() {
+      const file = fileInput.files[0];
+      if (!file) {
+         alert('사진을 입력하세요.');
+         return;
+      }
 
-      uploadButton.addEventListener('click', function() {
-         const file = fileInput.files[0];
-         if (!file) {
-            alert('사진을 입력하세요.');
-            return;
-         }
+      const formData = new FormData();
+      formData.append('image', file);
 
-         const formData = new FormData();
-         formData.append('image', file);
+      fetch('/food/calorie', {
+         method: 'POST',
+         body: formData
+      })
+              .then(response => response.json())
+              .then(data => {
+                 // 전체 데이터 배열을 로컬 저장소에 저장합니다.
+                 localStorage.setItem('foodData', JSON.stringify(data));
 
-         fetch('/food/calorie', {
-            method: 'POST',
-            body: formData
-         })
-                 .then(response => {
-                    if (response.ok) {
-                       return response.json();
-                    } else {
-                       throw new Error('Request failed');
-                    }
-                 })
-                 .then(data => {
-                    const kornameArray = data.map(item => item.korname);
-                    const calorieArray = data.map(item => item.calorie);
-
-                    // Save the kornameArray and calorieArray to local variables
-                    // You can use them in the calorie.html page
-                    localStorage.setItem('kornameArray', JSON.stringify(kornameArray));
-                    localStorage.setItem('calorieArray', JSON.stringify(calorieArray));
-
-                    // Redirect to calorie.html
-                    window.location.href = 'calorie.html';
-                 })
-                 .catch(error => {
-                    console.error(error);
-                    alert('서버로의 업로드에 실패했습니다.');
-                 });
-      });
+                 // calorie.html 페이지로 이동합니다.
+                 window.location.href = 'calorie.html';
+              })
+              .catch(error => {
+                 console.error(error);
+              });
    });
 
 </script>
